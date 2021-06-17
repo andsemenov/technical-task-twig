@@ -1,14 +1,11 @@
 const groupArrayElements = (array, n) => {
-  var arraySize = array.length;
-  chunk_size = Math.ceil(arraySize / n);
-  var splittedArray = [];
-
-  for (let index = 0; index < arraySize; index += chunk_size) {
-    myChunk = array.slice(index, index + chunk_size);
-
-    splittedArray.push(myChunk);
+  const arraySize = array.length; // length of original array
+  chunk_size = Math.ceil(arraySize / n); //length of splitted array (might be less for any groups of elements)
+  const splittedArray = []; //new Array for splitted groups
+  for (let i = 0; i < arraySize; i += chunk_size) {
+    myChunk = array.slice(i, i + chunk_size); //
+    splittedArray.push(myChunk); //added new group elements to result array
   }
-
   return splittedArray;
 };
 
